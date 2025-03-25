@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Vitrine de Projetos
+### Interface de exposição para o público
+A vitrine será a interface pública que exibirá os representantes de classes permitindo que o público votante visualize e realize o voto em conjunto com a votação.
 
-## Getting Started
+#### Bibliotecas/Dependências
+- **Next.js**: Framework para React que facilita o desenvolvimento de aplicações web, 
+  com funcionalidades como renderização do lado servidor (SSR), geração de sites estáticos (SSG) 
+  e muito mais.
+  
+- **React**: Biblioteca JavaScript para a criação de interfaces de usuário. 
+  Ela facilita o desenvolvimento de componentes reutilizáveis e a atualização eficiente 
+  da interface. 
+  
+- **ReactDOM**: Biblioteca responsável por manipular o DOM (Document Object Model) 
+  no navegador para renderizar a interface React.
+  
+#### Requisitos
 
-First, run the development server:
+- **Node.js**: A versão mínima recomendada do Node.js é `14.x.x`. Para melhor compatibilidade e desempenho, versões mais recentes como `16.x.x` ou `18.x.x` também são recomendadas.
+- **Next.js**: `next (15.2.2)`
+- **React**: `react (^19.0.0)`
+- **ReactDOM**: `react-dom (^19.0.0)`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+### Descrição do repositório
+Este repositório está destinado ao front-end do projeto vitrine desenvolvido em React.
+
+### Passos para rodar o projeto localmente
+  Antes de rodar o projeto, certifique-se de que tem as versões recomendadas para o projeto
+
+- Clonar o repositório
+Se você ainda não tem o código do projeto, comece clonando o repositório:
+
+```
+git clone https://github.com/laboratorio-de-praticas/vitrine-fe.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Instalar as dependências
+Com o projeto clonado em sua máquina, instale as dependências necessárias usando o npm:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm install
+```
+Este comando instala as dependências listadas no arquivo package.json
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Rodar o servidor de desenvolvimento
+Após a instalação das dependências, execute o seguinte comando para iniciar o servidor de desenvolvimento:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+npm start
+```
+Isso irá iniciar o servidor local e abrir a aplicação no navegador.
