@@ -9,12 +9,12 @@ interface ImgsProps {
 
 function Imgs({ src, alt, nome }: ImgsProps) {
   return (
-    <div className="relative md:w-full h-[500px] mb-4 sm:w-full h-[470px] overflow-hidden p-4 ">
+    <div className="relative md:w-full h-[500px] sm:w-full overflow-hidden ">
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-cover rounded-lg mt-4 mb-4"
+        className="object-cover rounded-lg "
       />
       <div className="absolute bottom-4 w-full text-center">
         <h4 
