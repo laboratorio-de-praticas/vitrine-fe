@@ -30,7 +30,7 @@ export default function Conteudo(): JSX.Element {
       </h1>
 
       <div className="w-full h-px bg-gray-500 mb-4"></div>
-      <div className="flex flex-wrap  mb-20">
+      <div className="flex flex-wrap mb-20">
       {candidatos.map((cand, index) => (
          <div key={index} className={`${widthClass} `}>
          

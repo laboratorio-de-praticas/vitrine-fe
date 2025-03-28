@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Menu(): JSX.Element {
   return (
-    <nav className="bg-red-700 border-gray-200 dark:bg-gray-900 mt-3">
+    <nav className="bg-red-700 border-gray-200 dark:bg-red-700 mt-3">
       <div className="container mx-auto flex items-center justify-between px-4 h-24">
       <Image 
           src="/logo_menu.png" 
