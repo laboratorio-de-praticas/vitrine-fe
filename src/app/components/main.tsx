@@ -1,7 +1,7 @@
-import React from "react";
+import React, { JSX } from "react";
 import Imgs from "./container";
 
-export default function Conteudo() {
+export default function Conteudo(): JSX.Element {
 
   const candidatos = [
     { src: "/candi1.jpg", alt: "Candidato 1", nome: "Nome Aluno 1" },

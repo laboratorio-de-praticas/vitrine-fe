@@ -1,16 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
+import Image from "next/image";
 import { FaFlickr, FaLinkedinIn, FaYoutube, FaInstagram, FaFacebookF, FaTwitter, FaBars, FaTimes } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 
-export default function SpHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function SpHeader(): JSX.Element {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <header className="w-full">
       <div className="flex justify-between items-center h-20">
         <div className="flex items-center bg-black w-76 rounded-r-[100px] h-22">
-          <img src="/sp.svg" alt="São Paulo" className="w-57" />
+        <Image 
+            src="/sp.svg" 
+            alt="São Paulo" 
+            width={228} 
+            height={80} 
+            className="w-57" 
+          />
         </div>
 
         <nav className="hidden md:flex items-center space-x-4 pr-10">
