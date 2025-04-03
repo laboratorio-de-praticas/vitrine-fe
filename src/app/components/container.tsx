@@ -5,19 +5,19 @@ interface ImgsProps {
   src: string;
   alt: string;
   nome: string;
+  qr: string;
 }
 
-function Imgs({ src, alt, nome }: ImgsProps) {
+function Imgs({ src, alt, nome, qr }: ImgsProps) {
   return (
      
-      <div className="relative h-[500px] max-h-[300px] md:max-h-[400px] ">
+      <div className="relative h-[650px] md:h-[550px] w-full ">
         <Image src={src} alt={alt} fill className="object-cover" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent" />
-        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent" />
+
         <div className="absolute bottom-4 w-full text-center">
           <h4
-            className="font-(family-name:--font-roboto-slab) mt-[-70px] text-center"
+            className="font-(family-name:--font-roboto-slab) mt-[-70px] mr-20 text-center"
             style={{
               color: "#fff",
               fontSize: "30px",
@@ -27,6 +27,14 @@ function Imgs({ src, alt, nome }: ImgsProps) {
             {nome}
           </h4>
         </div>
+        <div className="absolute bottom-4 right-4">
+        <Image
+          src={qr}
+          alt={`QR Code de ${nome}`}
+          width={100}
+          height={100}
+        />
+      </div>
       </div>
 
   );
