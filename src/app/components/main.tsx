@@ -22,12 +22,7 @@ const dsmCandidatos = [
     nome: "Nome DSM",
     qr: "/QRCode.png",
   },
-  {
-    src: "/candi4.jpg",
-    alt: "Candidato DSM 3",
-    nome: "Nome DSM",
-    qr: "/QRCode.png",
-  },
+  
 ];
 
 const geCandidatos = [
@@ -60,6 +55,7 @@ const geCandidatos = [
 export default function Conteudo(): JSX.Element {
   const [candidatos, setCandidatos] = useState(dsmCandidatos);
   const [titulo, setTitulo] = useState("Representantes - 5° DSM");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,17 +64,28 @@ export default function Conteudo(): JSX.Element {
       );
       setTitulo((prev) =>
         prev.includes("DSM")
-          ? "Representantes - 5° GE"
+          ? "Representantes - 5° Gestão Empresarial"
           : "Representantes - 5° DSM"
       );
+      setProgress(0);
     }, 10000);
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) return 100;
+        return prev + 1;
+      });
+    }, 100);
+    return () => clearInterval(progress);
+  }, [candidatos]);
+
   return (
-    <div className="bg-white p-4">
+    <div className="bg-white p-10">
       <h1
-        className="text-left ml-35 mt-2 mb-2 font-(family-name:--font-roboto-slab)"
+        className="text-left ml-28 mb-2 font-(family-name:--font-roboto-slab)"
         style={{ color: "#1A6C7C", fontSize: "32px", fontWeight: "500" }}
       >
         {titulo}
@@ -93,7 +100,14 @@ export default function Conteudo(): JSX.Element {
             <Imgs src={cand.src} alt={cand.alt} nome={cand.nome} qr={cand.qr} />
           </div>
         ))}
+        
       </div>
+      <div className="w-[100rem] ml-[7.05rem] h-4 bg-gray-200 overflow-hidden">
+          <div 
+            className="h-full bg-[#1A6C7C] transition duration-700 ease-in-out" 
+            style={{ width: `${progress}%` }}
+          />
+        </div>
     </div>
   );
 }
