@@ -90,9 +90,9 @@ export default function Conteudo(): JSX.Element {
 
   return (
     
-    <div className="bg-white p-4 mx-auto max-w-[90vw] xl:max-w-[1600px] flex flex-col xl:justify-center xl:items-center">
+    <div className="bg-white  pb-[38px] mx-auto max-w-[90vw] xl:max-w-[1600px] flex flex-col xl:justify-center">
       <h1
-        className="text-left mt-8 xl:mt-12 mb-8 font-(family-name:--font-roboto-slab) "
+        className="text-left pb-8 xl:mt-9 font-(family-name:--font-roboto-slab) "
         style={{ color: "#1A6C7C", fontSize: "32px", fontWeight: "500" }}
       >
         {titulo}
@@ -102,7 +102,6 @@ export default function Conteudo(): JSX.Element {
         className="flex flex-nowrap justify-start xl:justify-center"
         style={{ 
           width: `${Math.min(100, (candidatos.length / 4) * 100)}%`,
-          margin: '0 auto',
           maxWidth: '1600px'
         }}
       >
@@ -119,7 +118,7 @@ export default function Conteudo(): JSX.Element {
 
  
       <div 
-        className="mt-8 h-4 bg-gray-200 overflow-hidden"
+        className="m-8 h-4 bg-gray-300 overflow-hidden"
         style={{ 
           width: `${Math.min(100, (candidatos.length / 4) * 100)}%`,
           margin: '0 auto'
