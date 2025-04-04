@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Cabeca() {
+export default function Footer() {
   return (
-    <footer className="bg-black border-gray-200 dark:bg-gray-900  h-15 py-4 flex justify-center md:fixed md:bottom-0 md:left-0 md:right-0">
+    <footer className="bg-black border-gray-200 dark:bg-black flex justify-center 
+                       xl:mt-10 xl:bottom-0 xl:left-0 xl:right-0">
       <Image 
         src="/logo_sp.png" 
         alt="são paulo" 
-        width={120} 
-        height={60} 
-        className="w-30 h-15 mt-[-15px]" 
+        width={240} 
+        height={80} 
+        className="md:h-25" 
       />
     </footer>
   );
