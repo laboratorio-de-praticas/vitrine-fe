@@ -90,7 +90,7 @@ export default function Conteudo(): JSX.Element {
 
   return (
     
-    <div className="bg-white  pb-[38px] mx-auto max-w-[90vw] xl:max-w-[1600px] flex flex-col xl:justify-center">
+    <div className="bg-white mx-auto max-w-[90vw] xl:max-w-[1600px] flex flex-col xl:justify-center">
       <h1
         className="text-left pb-8 xl:mt-9 font-(family-name:--font-roboto-slab) "
         style={{ color: "#1A6C7C", fontSize: "32px", fontWeight: "500" }}
