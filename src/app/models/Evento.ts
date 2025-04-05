@@ -2,7 +2,7 @@ import { Candidato } from "./Candidato";
 
 export interface Evento {
     id: number;
-    nome: string;
+    nome_evento: string;
     tipo_evento: string;
     data_inicio: Date;
     data_fim: Date;
