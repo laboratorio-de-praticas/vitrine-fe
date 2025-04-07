@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoSlab.variable} antialiased`}>{children}</body>
+      <body className={`${robotoSlab.variable} antialiased`} cz-shortcut-listen="true">{children}</body>
     </html>
   );
 }
