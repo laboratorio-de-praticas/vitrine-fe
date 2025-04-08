@@ -1,15 +1,15 @@
-import { Candidato } from "./Candidato";
+import { Representante } from "./Representante";
 
 export interface Evento {
-    id: number;
+    id_evento: number;
     nome_evento: string;
     tipo_evento: string;
-    data_inicio: Date;
-    data_fim: Date;
-    descricao: string;
-    status: string;
+    descricao_evento: string;
+    status_evento: string;
+    curso_semestre: string;
     data_alteracao: Date;
     data_criacao: Date;
-    curso_semestre: string;
-    candidatos: Candidato[];
+    data_inicio: Date;
+    data_fim: Date;
+    representantes?: Representante[];
   }
