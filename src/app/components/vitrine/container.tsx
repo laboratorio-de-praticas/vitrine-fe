@@ -27,8 +27,8 @@ function Imgs({ src, nome, qr }: ImgsProps) {
             {nome}
           </h4>
         </div>
-        <div className="absolute bottom-4 right-4">
-        <QRCodeCanvas value={qr} size={100} includeMargin={true}/>
+        <div className="absolute bottom-4 right-4 p-1 bg-white">
+        <QRCodeCanvas value={qr} size={98} includeMargin={false} className="border-2 border-white"/>
       </div>
       </div>
 
