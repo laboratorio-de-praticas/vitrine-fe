@@ -4,16 +4,16 @@ import React, { JSX, useState, useEffect } from "react";
 import Imgs from "./container";
 import { useRouter } from "next/navigation";
 import { Evento } from "@/app/models/Evento";
-import { Candidato } from "@/app/models/Candidato";
+import { Representante } from "@/app/models/Representante";
 
 export default function Conteudo(): JSX.Element {
 
 const [eventos, setEventos] = useState<Evento[]>([]);
 const [progress, setProgress] = useState(0);
-const [candidatos, setCandidatos] = useState<Candidato[]>([]);
+const [representantes, setRepresentantes] = useState<Representante[]>([]);
 const [nome, setNome] = useState<string | null>(null);
 const [error, setError] = useState<string | null>(null);
-const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
+// const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
 
 const router = useRouter();
 useEffect(() => {
@@ -39,7 +39,12 @@ useEffect(() => {
       setEventos(data);
 
       if (data.length > 0) {
-        setCandidatos(data[0].candidatos);
+        if(data[0].representantes && data[0].representantes.length>0){
+          setRepresentantes(data[0].representantes);
+        } else {
+          setRepresentantes([]);
+        }
+        
         setNome(data[0].nome_evento);
       }
       console.log(data);
@@ -64,8 +69,12 @@ useEffect(() => {
   const interval = setInterval(() => {
     setCurrentEventoIndex((prevIndex) => {
       const nextIndex = (prevIndex + 1) % eventos.length;
-  
-      setCandidatos(eventos[nextIndex].candidatos);
+      
+      if (eventos[nextIndex].representantes) {
+        setRepresentantes(eventos[nextIndex].representantes);
+      } else {
+        setRepresentantes([]);
+      }
       setNome(eventos[nextIndex].nome_evento);
       setProgress(0);
       return nextIndex;
@@ -90,16 +99,16 @@ useEffect(() => {
           <div
             className="flex flex-nowrap justify-start xl:justify-center"
             style={{
-              width: `${Math.min(100, (candidatos.length / 4) * 100)}%`,
+              width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
               margin: "0 auto",
               maxWidth: "1600px",
             }}
           >
-            {candidatos.map((cand, i) => (
+            {representantes.map((cand, i) => (
               <div
                 key={i}
                 className="flex-shrink-0 relative"
-                style={{ width: `${100 / candidatos.length}%` }}
+                style={{ width: `${100 / representantes.length}%` }}
               >
                 <Imgs
                   src={cand.aluno?.foto_url ?? "/default_image.png"}
@@ -112,7 +121,7 @@ useEffect(() => {
           <div
             className="mt-8 h-4 bg-gray-200 overflow-hidden"
             style={{
-              width: `${Math.min(100, (candidatos.length / 4) * 100)}%`,
+              width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
               margin: "0 auto",
             }}
           >
@@ -121,7 +130,7 @@ useEffect(() => {
               style={{ width: `${progress}%` }}
             />
           </div>
-          {candidatos.length === 0 && (
+          {representantes.length === 0 && (
             <div className="mt-8 text-center text-gray-500 italic text-lg">
               Sem representantes disponíveis no momento, adicione um novo participante
             </div>
