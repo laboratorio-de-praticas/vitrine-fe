@@ -122,7 +122,7 @@ useEffect(() => {
             />
           </div>
           {candidatos.length === 0 && (
-            <div className="mt-8 text-center text-gray-500 italic text-lg">
+            <div className="mt-8 text-center text-gray-500 italic text-xl">
               Sem representantes disponíveis no momento, adicione um novo participante
             </div>
           )}
