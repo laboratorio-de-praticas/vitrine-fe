@@ -13,7 +13,7 @@ const [progress, setProgress] = useState(0);
 const [representantes, setRepresentantes] = useState<Representante[]>([]);
 const [nome, setNome] = useState<string | null>(null);
 const [error, setError] = useState<string | null>(null);
-// const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
+const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
 
 const router = useRouter();
 useEffect(() => {

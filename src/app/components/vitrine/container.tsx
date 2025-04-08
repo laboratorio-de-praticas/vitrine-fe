@@ -20,7 +20,7 @@ function Imgs({ src, nome, qr }: ImgsProps) {
             className="font-(family-name:--font-roboto-slab) mt-[-70px] mr-20 text-center"
             style={{
               color: "#fff",
-              fontSize: "30px",
+              fontSize: "24px",
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
             }}
           >
