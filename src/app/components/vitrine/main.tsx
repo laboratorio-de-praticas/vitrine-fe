@@ -79,7 +79,7 @@ export default function Conteudo(): JSX.Element {
         setProgress(0);
         return nextIndex;
       });
-    }, 100000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [eventos]);
