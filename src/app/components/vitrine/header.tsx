@@ -9,7 +9,7 @@ export default function SpHeader(): JSX.Element {
         <div className="flex items-center bg-black rounded-r-[100px]">
           <div className="header-container-4k relative w-[248px]">
             <Image
-              src="/logo_sp.png"
+              src="/logo_sp.svg"
               alt="São Paulo"
               fill
               className="object-contain header-logo"

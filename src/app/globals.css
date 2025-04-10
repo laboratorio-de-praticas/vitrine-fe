@@ -53,10 +53,10 @@
   }
 
   .header-logo {
-    width: 306px !important;
-    height: 110px !important;
     margin-top: -.5rem;
-    margin-left: 1rem;
+    margin-left: 3.5rem;
+    width: 216px !important;
+    height: 99px !important;
   }
 
   
@@ -72,6 +72,11 @@
     margin: 0 auto !important;
     padding-right: 4rem !important;
     margin-bottom: 50px !important;
+  }
+
+  .footer-logo {
+    width: 220px !important;
+    height: 110px !important;
   }
 }
 
@@ -142,7 +147,8 @@
 
   .menu-logo-4k {
     width: 990px !important;
-    height: 208px !important;
+    height: 195px !important;
+    margin-left: 3rem;
   }
 }
 

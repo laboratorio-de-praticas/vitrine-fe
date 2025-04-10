@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="footer-logo relative h-[80px] w-[240px] mx-auto">
           <Image
-            src="/logo_sp.png"
+            src="/logo_sp.svg"
             alt="são paulo"
             fill
             className="object-contain"
