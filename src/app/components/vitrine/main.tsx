@@ -86,7 +86,7 @@ export default function Conteudo(): JSX.Element {
 
   return (
     <>
-      <div className="container-principal bg-white p-4 mx-auto flex flex-col justify-center items-center">
+      <div className="container-principal bg-white mx-auto flex flex-col justify-center items-center">
         <h1
           className="text-left mt-8 xl:mt-12 xl:text-3xl mb-8 font-(family-name:--font-roboto-slab) text-4k"
           style={{ color: "#1A6C7C", fontWeight: "500" }}
@@ -96,7 +96,7 @@ export default function Conteudo(): JSX.Element {
         <div
           className="grid-container flex flex-nowrap justify-center"
           style={{
-            width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
+            width: `${Math.min(100, (representantes.length / 4) * 100)}%`, 
             margin: "0 auto",
           }}
         >
