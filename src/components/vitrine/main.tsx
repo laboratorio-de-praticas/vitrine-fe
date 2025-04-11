@@ -12,12 +12,13 @@ export default function Conteudo(): JSX.Element {
   const [eventos, setEventos] = useState<Evento[]>([]);
   const [progress, setProgress] = useState(0);
   const [representantes, setRepresentantes] = useState<Representante[]>([]);
-  const [curso, setCurso] = useState<String>();
+  const [curso, setCurso] = useState<string>();
   const [semestre, setSemestre]  =useState<number>();
   const [nome, setNome] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
-
+  console.log(error);
+  console.log(currentEventoIndex);
   const router = useRouter();
   useEffect(() => {
     localStorage.setItem(
