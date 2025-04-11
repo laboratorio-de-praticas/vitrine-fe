@@ -1,6 +1,6 @@
 type IconProps = {
     text: string;
-    curso: String;
+    curso: string;
   };
   
   export const Icon = ({ text, curso }: IconProps) => {

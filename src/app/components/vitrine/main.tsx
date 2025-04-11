@@ -13,7 +13,7 @@ export default function Conteudo(): JSX.Element {
   const [progress, setProgress] = useState(0);
   const [representantes, setRepresentantes] = useState<Representante[]>([]);
   const [curso, setCurso] = useState<String>();
-  const [semestre, setSemestre]  =useState<Number>();
+  const [semestre, setSemestre]  =useState<number>();
   const [nome, setNome] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
@@ -30,7 +30,7 @@ export default function Conteudo(): JSX.Element {
       router.push("/login");
       return;
     }
-    fetch("http://localhost:5000/v1/vitrine/tv", {
+    fetch("http://localhost:5001/v1/vitrine/tv", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -51,7 +51,7 @@ export default function Conteudo(): JSX.Element {
           } else {
             setRepresentantes([]);
           }
-          let curso_semestre = data[0].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
+          const curso_semestre = data[0].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
 
           if(curso_semestre){
             setCurso(curso_semestre[1]);
@@ -89,7 +89,7 @@ export default function Conteudo(): JSX.Element {
         } else {
           setRepresentantes([]);
         }
-        let curso_semestre = eventos[nextIndex].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
+        const curso_semestre = eventos[nextIndex].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
         if(curso_semestre){
           setCurso(curso_semestre[1]);
           setSemestre(Number(curso_semestre[2])) 
@@ -142,8 +142,7 @@ export default function Conteudo(): JSX.Element {
 
         {representantes.length === 0 && (
           <div className="mt-8 text-center text-gray-500 italic text-name">
-            Sem representantes disponíveis no momento, adicione um novo
-            participante
+            Sem representantes disponíveis para esse evento no momento.
           </div>
         )}
 
