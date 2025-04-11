@@ -89,6 +89,15 @@ export default function Conteudo(): JSX.Element {
         } else {
           setRepresentantes([]);
         }
+        let curso_semestre = eventos[nextIndex].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
+        if(curso_semestre){
+          setCurso(curso_semestre[1]);
+          setSemestre(Number(curso_semestre[2])) 
+        }else{
+          setCurso("");
+          setSemestre(0);
+        }
+
         setNome(eventos[nextIndex].nome_evento);
         setProgress(0);
         return nextIndex;
@@ -102,20 +111,14 @@ export default function Conteudo(): JSX.Element {
     <>
       <div className={"container-principal bg-white mx-auto flex flex-col justify-center items-center "}>
         <div className={"w-full flex space-x-4 justify-between mb-8" }>
-          
-        <h1 className={`flex items-center w-full mt-0 text-left xl:text-3xl  font-(family-name:--font-roboto-slab) ${curso}-TITLE`} style={{ fontWeight: "500" }}>{nome}</h1>
-          <div className="w-full flex items-center justify-end gap-[38px] row">
-            <IconCurso text={`${curso}`}></IconCurso>
-            <Icon curso={`${curso}`} text={`${semestre}º SEM`}></Icon>
+          <h1 className={`flex items-center w-full mt-0 text-left xl:text-3xl  font-(family-name:--font-roboto-slab) ${curso}-TITLE`} style={{ fontWeight: "500" }}>{nome}</h1>
+            <div className="w-full flex items-center justify-end gap-[38px] row">
+              <IconCurso text={`${curso}`}></IconCurso>
+              <Icon curso={`${curso}`} text={`${semestre}º SEM`}></Icon>
           </div>
-
-        <div className="">
-
         </div>
-        </div>
-     
         <div
-          className="grid-container flex flex-nowrap justify-center"
+          className="w-full grid-container flex flex-nowrap justify-center"
           style={{
             width: `${Math.min(100, (representantes.length / 4) * 100)}%`, 
             margin: "0 auto",
@@ -136,24 +139,27 @@ export default function Conteudo(): JSX.Element {
             </div>
           ))}
         </div>
-        <div
-          className="mt-8 h-4 bg-gray-200 overflow-hidden"
-          style={{
-            width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
-            margin: "0 auto",
-          }}
-        >
-          <div
-            className={`h-full ${curso}-PROGRESS transition-all duration-200 ease-in-out`}
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+
         {representantes.length === 0 && (
           <div className="mt-8 text-center text-gray-500 italic text-name">
             Sem representantes disponíveis no momento, adicione um novo
             participante
           </div>
         )}
+
+        
+        <div
+          className="w-full mt-8 h-4 bg-gray-200 overflow-hidden min-h-4"
+          style={{
+            margin: "0 auto",
+          }}
+        >
+          <div
+            className={` h-full ${curso}-PROGRESS transition-all duration-200 ease-in-out`}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
       </div>
     </>
   );
