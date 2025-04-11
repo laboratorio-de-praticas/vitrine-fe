@@ -5,11 +5,15 @@ import Imgs from "./container";
 import { useRouter } from "next/navigation";
 import { Evento } from "@/app/models/Evento";
 import { Representante } from "@/app/models/Representante";
+import { Icon } from "./icon";
+import { IconCurso } from "./iconCurso";
 
 export default function Conteudo(): JSX.Element {
   const [eventos, setEventos] = useState<Evento[]>([]);
   const [progress, setProgress] = useState(0);
   const [representantes, setRepresentantes] = useState<Representante[]>([]);
+  const [curso, setCurso] = useState<String>();
+  const [semestre, setSemestre]  =useState<Number>();
   const [nome, setNome] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentEventoIndex, setCurrentEventoIndex] = useState<number>(0);
@@ -43,8 +47,18 @@ export default function Conteudo(): JSX.Element {
         if (data.length > 0) {
           if (data[0].representantes && data[0].representantes.length > 0) {
             setRepresentantes(data[0].representantes);
+            
           } else {
             setRepresentantes([]);
+          }
+          let curso_semestre = data[0].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
+
+          if(curso_semestre){
+            setCurso(curso_semestre[1]);
+            setSemestre(Number(curso_semestre[2])) 
+          }else{
+            setCurso("");
+            setSemestre(0);
           }
 
           setNome(data[0].nome_evento);
@@ -75,6 +89,15 @@ export default function Conteudo(): JSX.Element {
         } else {
           setRepresentantes([]);
         }
+        let curso_semestre = eventos[nextIndex].curso_semestre.match(/^([A-Za-z]+)(\d+)$/);
+        if(curso_semestre){
+          setCurso(curso_semestre[1]);
+          setSemestre(Number(curso_semestre[2])) 
+        }else{
+          setCurso("");
+          setSemestre(0);
+        }
+
         setNome(eventos[nextIndex].nome_evento);
         setProgress(0);
         return nextIndex;
@@ -86,15 +109,16 @@ export default function Conteudo(): JSX.Element {
 
   return (
     <>
-      <div className="container-principal bg-white mx-auto flex flex-col justify-center items-center">
-        <h1
-          className="text-left mt-8 xl:mt-12 xl:text-3xl mb-8 font-(family-name:--font-roboto-slab) text-4k"
-          style={{ color: "#1A6C7C", fontWeight: "500" }}
-        >
-          {nome}
-        </h1>
+      <div className={"container-principal bg-white mx-auto flex flex-col justify-center items-center "}>
+        <div className={"w-full flex space-x-4 justify-between mb-8" }>
+          <h1 className={`flex items-center w-full mt-0 text-left xl:text-3xl  font-(family-name:--font-roboto-slab) ${curso}-TITLE`} style={{ fontWeight: "500" }}>{nome}</h1>
+            <div className="w-full flex items-center justify-end gap-[38px] row">
+              <IconCurso text={`${curso}`}></IconCurso>
+              <Icon curso={`${curso}`} text={`${semestre}º SEM`}></Icon>
+          </div>
+        </div>
         <div
-          className="grid-container flex flex-nowrap justify-center"
+          className="w-full grid-container flex flex-nowrap justify-center"
           style={{
             width: `${Math.min(100, (representantes.length / 4) * 100)}%`, 
             margin: "0 auto",
@@ -115,24 +139,27 @@ export default function Conteudo(): JSX.Element {
             </div>
           ))}
         </div>
-        <div
-          className="mt-8 h-4 bg-gray-200 overflow-hidden"
-          style={{
-            width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
-            margin: "0 auto",
-          }}
-        >
-          <div
-            className="h-full bg-[#1A6C7C] transition-all duration-200 ease-in-out"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+
         {representantes.length === 0 && (
           <div className="mt-8 text-center text-gray-500 italic text-name">
             Sem representantes disponíveis no momento, adicione um novo
             participante
           </div>
         )}
+
+        
+        <div
+          className="w-full mt-8 h-4 bg-gray-200 overflow-hidden min-h-4"
+          style={{
+            margin: "0 auto",
+          }}
+        >
+          <div
+            className={` h-full ${curso}-PROGRESS transition-all duration-200 ease-in-out`}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
       </div>
     </>
   );

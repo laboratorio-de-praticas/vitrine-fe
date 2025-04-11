@@ -41,6 +41,36 @@
   word-break: break-word !important;
 }
 
+.DSM-PROGRESS {
+  background-color: #FF0000;
+}
+.DSM-ICON{
+  background-color: #7E0000;
+}
+.DSM-TITLE{
+  color: #B20000;
+}
+
+.GE-PROGRESS{
+  background-color: #1A6C7C;
+}
+.GE-ICON{
+  background-color: #004854;
+}
+.GE-TITLE{
+  color: #1A6C7C;
+}
+
+.ADS-PROGRESS{
+  background-color: #FFC24C;
+}
+.ADS-ICON{
+  background-color: #D5A700;
+}
+.ADS-TITLE{
+  color: #D5A700;
+}
+
 @media (max-width: 3839px){
   .header-container-4k {
     width: 368px !important;
