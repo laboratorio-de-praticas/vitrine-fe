@@ -1,8 +1,7 @@
 import React from "react";
-import SpHeader from "../../components/vitrine/header";
-import Navbar from "../../components/vitrine/menu";
-import Main from "../../components/vitrine/main";
-import Footer from "../../components/vitrine/footer";
+import SpHeader from "../../../../components/vitrine/header";
+import Footer from "../../../../components/vitrine/footer";
+import Slides from "../../../../components/vitrine/slides";
 
 
 export default function Home(){
@@ -11,7 +10,7 @@ export default function Home(){
       <SpHeader />
       <Navbar />
       <main className="flex-1">
-        <Main />
+        <Slides />
       </main>
       <Footer />
     </div>
