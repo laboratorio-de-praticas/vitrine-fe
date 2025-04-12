@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Menu() {
+export default function Navbar() {
   return (
     <nav className="menu-container bg-red-700 border-gray-200 dark:bg-red-700 h-24">
       <div className="container flex items-center px-1">

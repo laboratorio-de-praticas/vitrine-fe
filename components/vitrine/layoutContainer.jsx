@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Slides from "./slides";
 
 export default function Layout() {
   return (

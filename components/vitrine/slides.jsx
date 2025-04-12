@@ -31,7 +31,7 @@ export default function Slides() {
       return router.push("/login");
     }
 
-    fetch("http://localhost:5001/v1/vitrine/tv", {
+    fetch(`${VITRINE_BE_HOST}/v1/vitrine/tv`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
