@@ -1,8 +1,8 @@
 "use client";
-import React, { JSX } from "react";
+import React from "react";
 import Image from "next/image";
 
-export default function SpHeader(): JSX.Element {
+export default function SpHeader() {
   return (
     <header className="w-full">
       <div className="flex justify-between items-center">
