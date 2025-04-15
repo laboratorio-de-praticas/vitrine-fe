@@ -12,9 +12,12 @@ export default function SpHeader() {
             <Image
               src="/logo_sp.svg"
               alt="São Paulo"
-              fill
-              className="object-contain header-logo"
+              width={100}
+              height={100} 
+              className="object-contain w-full h-auto"
             />
+
+
           </div>
         </div>
         <Navbar></Navbar>
