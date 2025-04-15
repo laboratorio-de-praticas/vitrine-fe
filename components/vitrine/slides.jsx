@@ -94,13 +94,13 @@ export default function Slides() {
     <div className="w-full py-[2rem] px-[3rem] bg-white mx-auto flex flex-col justify-center items-center">
       <div className="w-full flex space-x-4 justify-between mb-8">
         <h1
-          className={`flex items-center w-full mt-0 text-left xl:text-3xl font-(family-name:--font-roboto-slab) ${curso}-TITLE`}
+          className={`flex items-center w-full mt-0 text-left xl:text-2xl font-(family-name:--font-roboto-slab) ${curso}-TITLE`}
           style={{ fontWeight: "500" }}
         >
           {nome}
         </h1>
 
-        <div className="w-full flex items-center justify-end gap-[38px] row">
+        <div className="w-full flex items-center justify-end gap-[20px] row">
           <IconCurso text={curso} />
           <Icon curso={curso} text={`${semestre}º SEM`} />
         </div>

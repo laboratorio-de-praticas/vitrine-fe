@@ -6,9 +6,9 @@ function Imgs({ src, nome, qr }) {
   return (
     <div className="imagem-container relative w-full mx-auto">
       <Image src={src} alt="Foto do Aluno" fill className="object-cover" />
-      <div className="flex justify-evenly column align-center absolute bottom-0 left-0 right-0 items-center bg-gradient-to-t from-black to-transparent"> 
+      <div className="flex justify-between column py-4 px-2 align-center absolute bottom-0 left-0 right-0 items-center bg-gradient-to-t from-black to-transparent"> 
         <p 
-          className="flex font-(family-name:--font-roboto-slab) mb-4  mt-[-70px] text-center break-words whitespace-normal text-name"
+          className="w-full justify-center flex font-(family-name:--font-roboto-slab) text-center break-words whitespace-normal text-name"
           style={{
             color: "#fff",
             fontSize: "26px",
@@ -17,11 +17,10 @@ function Imgs({ src, nome, qr }) {
         >
           {nome}
         </p>
-        <div className="bg-white mb-4  p-1">
+        <div className="bg-white p-1">
         <QRCodeCanvas
           value={qr}
-          size={98}
-          className="border-2 border-white qrcode"
+          className="border-2 border-white qrcode-4k"
         />
         </div>
       </div>
