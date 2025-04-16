@@ -7,6 +7,7 @@ import { Icon } from "./icon";
 import { IconCurso } from "./iconCurso";
 
 export default function Slides() {
+  const VITRINE_BE_HOST = process.env.NEXT_PUBLIC_VITRINE_BE;
   const [eventos, setEventos] = useState([]);
   const [representantes, setRepresentantes] = useState([]);
   const [curso, setCurso] = useState("");
@@ -24,10 +25,13 @@ export default function Slides() {
   };
 
   useEffect(() => {
+    localStorage.setItem(
+      "token",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    );
     const token = localStorage.getItem("token");
 
     if (!token) {
-      localStorage.setItem("token", "hardcoded-test-token");
       return router.push("/login");
     }
 
@@ -81,29 +85,29 @@ export default function Slides() {
 
         return nextIndex;
       });
-    }, 10000);
+    }, 1000000);
 
     return () => clearInterval(interval);
   }, [eventos]);
 
   return (
-    <div className="container-principal bg-white mx-auto flex flex-col justify-center items-center">
+    <div className="w-full py-[2rem] px-[3rem] bg-white mx-auto flex flex-col justify-center items-center">
       <div className="w-full flex space-x-4 justify-between mb-8">
         <h1
-          className={`flex items-center w-full mt-0 text-left xl:text-3xl font-(family-name:--font-roboto-slab) ${curso}-TITLE`}
+          className={`flex items-center w-full mt-0 text-left  text-[20px] 3xl:text-[52px] font-(family-name:--font-roboto-slab) ${curso}-TITLE`}
           style={{ fontWeight: "500" }}
         >
           {nome}
         </h1>
 
-        <div className="w-full flex items-center justify-end gap-[38px] row">
+        <div className="w-full flex items-center justify-end gap-[20px] row">
           <IconCurso text={curso} />
           <Icon curso={curso} text={`${semestre}º SEM`} />
         </div>
       </div>
 
       <div
-        className="w-full grid-container flex flex-nowrap justify-center"
+        className="w-full grid-container  flex flex-nowrap justify-center"
         style={{
           width: `${Math.min(100, (representantes.length / 4) * 100)}%`,
           margin: "0 auto",
@@ -112,7 +116,7 @@ export default function Slides() {
         {representantes.map((cand, i) => (
           <div
             key={i}
-            className="slide-item flex-shrink-0 relative"
+            className="3xl:min-w-[500px] !grow-[1]  flex-shrink-0 relative"
             style={{ width: `${100 / representantes.length}%` }}
           >
             <Imgs
@@ -125,7 +129,7 @@ export default function Slides() {
       </div>
 
       {representantes.length === 0 && (
-        <div className="mt-8 text-center text-gray-500 italic text-name">
+        <div className="mt-8 text-center text-gray-500 italic text-[1.4rem] leading-[1.3] m-0 3xl:text-[2.9rem]">
           Sem representantes disponíveis para esse evento no momento.
         </div>
       )}

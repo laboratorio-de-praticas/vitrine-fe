@@ -3,17 +3,15 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="menu-container bg-red-700 border-gray-200 dark:bg-red-700 h-24">
-      <div className="container flex items-center px-1">
-        <div className="menu-logo-4k relative w-[516px] h-[86px] ml-[3rem]">
+    <nav className="w-full menu-container bg-red-700 border-gray-200 dark:bg-red-700 py-4">
+        <div className="menu-logo-4k justify-center relative w-[516px] h-[100%] ml-8">
           <Image 
             src="/logo_menu.svg" 
             alt="logo" 
             fill
-            className="object-contain"
+            className="object-fill !w-auto !relative  min-h-[50px]"
           />
         </div>
-      </div>
     </nav>
   );
 }

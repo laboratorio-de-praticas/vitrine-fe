@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-black border-gray-200 dark:bg-black w-full">
       <div className="container mx-auto">
-        <div className="footer-logo relative h-[80px] w-[240px] mx-auto">
+        <div className="w-[220px] h-[110px] 3xl:w-[580px] 3xl:h-[200px] relative mx-auto">
           <Image
             src="/logo_sp.svg"
             alt="são paulo"

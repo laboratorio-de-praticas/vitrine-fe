@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-3xl: 2560px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -11,28 +15,10 @@
     --foreground: #171717;
   }
 }
-.imagem-container {
-  height: 600px;
-}
 
 .text-name {
   font-size: 26px;
-  padding-right: 2rem;
-  margin-bottom: 1rem;
   line-height: 1.3 !important;
-  max-width: 78% !important;
-}
-
-.qrcode {
-  width: 98px !important;
-  height: 98px !important;
-  bottom: 2rem !important;
-  right: 2rem !important;
-}
-
-.break-name {
-  white-space: normal !important;
-  word-break: break-word !important;
 }
 
 .DSM-PROGRESS {
@@ -44,7 +30,6 @@
 .DSM-TITLE{
   color: #B20000;
 }
-
 .GE-PROGRESS{
   background-color: #1A6C7C;
 }
@@ -54,7 +39,6 @@
 .GE-TITLE{
   color: #1A6C7C;
 }
-
 .ADS-PROGRESS{
   background-color: #FFC24C;
 }
@@ -64,117 +48,11 @@
 .ADS-TITLE{
   color: #D5A700;
 }
-
-@media (max-width: 3839px){
-  .header-container-4k {
-    width: 368px !important;
-    height: 90px !important;
-    border-radius: 300px !important;
-  }
-
-  .text-4k {
-    margin-top: -20px !important;
-  }
-
-  .header-logo {
-    margin-top: -.5rem;
-    margin-left: 3.5rem;
-    width: 216px !important;
-    height: 99px !important;
-  }
-
-  
-  .container-principal {
-    max-width: 100% !important;
-    padding: 4rem 4rem !important;
-  }
-
-  .text-name {
-    font-size: 1.4rem !important;
-    line-height: 1.3 !important;
-    max-width: 78% !important;
-    margin: 0 auto !important;
-    padding-right: 4rem !important;
-    margin-bottom: 50px !important;
-  }
-
-  .footer-logo {
-    width: 220px !important;
-    height: 110px !important;
-  }
+.slide-item{
+  min-width: 500px !important;
+  flex-grow: 1 !important;
 }
 
-@media (min-width: 3840px) {
-  .text-4k {
-    font-size: 4.25rem;
-    margin-bottom: 5rem !important;
-  }
-  .text-name {
-    font-size: 2.9rem !important;
-    line-height: 1.3 !important;
-    max-width: 78% !important;
-    margin: 0 auto !important;
-    padding-right: 5rem !important;
-    margin-bottom: 50px !important;
-  }
-  .imagem-container {
-    height: 1000px !important;
-  }
-
-  .qrcode-4k {
-    width: 260px !important;
-    height: 260px !important;
-
-  }
-
-  .qrcode-4k canvas {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  .container-principal {
-    max-width: 100% !important;
-    padding: 8rem 8rem !important;
-  }
-
-  .slide-item {
-    min-width: 500px !important;
-    flex-grow: 1 !important;
-  }
-
-  .break-name {
-    white-space: normal !important;
-    word-break: break-word !important;
-  }
-
-  .footer-logo {
-    width: 580px !important;
-    height: 260px !important;
-  }
-
-  .header-container-4k {
-    width: 768px !important;
-    height: 200px !important;
-    border-radius: 300px !important;
-  }
-
-  .header-logo {
-    width: 506px !important;
-    height: 260px !important;
-    margin-left: 6rem !important;
-    margin-top: -2rem;
-  }
-
-  .menu-container {
-    height: 202px !important;
-  }
-
-  .menu-logo-4k {
-    width: 990px !important;
-    height: 195px !important;
-    margin-left: 3rem;
-  }
-}
 
 body {
   background: var(--background);
