@@ -9,7 +9,7 @@ export default function Navbar() {
             src="/logo_menu.svg" 
             alt="logo" 
             fill
-            className="object-fill banner  min-h-[50px]"
+            className="object-fill !w-auto !relative  min-h-[50px]"
           />
         </div>
     </nav>
