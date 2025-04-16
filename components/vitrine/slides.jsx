@@ -85,7 +85,7 @@ export default function Slides() {
 
         return nextIndex;
       });
-    }, 1000000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [eventos]);
