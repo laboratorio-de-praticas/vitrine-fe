@@ -44,42 +44,36 @@ export const GeneratePdf = async (eventoNome, projetos) => {
 
   for (let i = 0; i < projetos.length; i++) {
     const projeto = projetos[i];
-
-    let qrData;
-    try {
-      qrData = JSON.parse(projeto.qrcode);
-    } catch (err) {
-      console.error("QR inválido ou não é JSON:", projeto.qrcode);
-      continue;
-    }
-
     const qrImage = await generateQrDataURL(projeto.qrcode);
-    const projetoNome = qrData.nome || "Projeto sem nome";
-
+    const projetoNome = projeto.projeto.titulo;
+  
     if (qrImage) {
+      const text = `Projeto: ${projetoNome}`;
+      const textWidth = doc.getTextWidth(text);
+      doc.addImage(qrImage, "PNG", x, y, qrSize, qrSize);
       doc.setFontSize(12);
       doc.setFont("helvetica", "normal");
-      doc.text(`Projeto: ${projetoNome}`, x, y + qrSize + 5, { maxWidth: 80 });
-      doc.addImage(qrImage, "PNG", x, y, qrSize, qrSize);
 
-      count++;
+      const textX = x + (qrSize / 2) - (doc.getTextWidth(text) / 2);
+      doc.text(text, textX, y + qrSize + 5);
 
-      if (count % 4 === 0 && i < projetos.length - 1) {
+  
+      x += qrSize + spacingX;
+  
+      if ((i + 1) % 2 === 0) {
+        x = marginX; 
+        y += qrSize + spacingY + 10; 
+      }
+  
+      if ((i + 1) % 4 === 0 && i < projetos.length - 1) {
         doc.addPage();
         addPageHeader();
         x = marginX;
         y = marginY + 20;
-        continue;
-      }
-
-      if (count % 2 === 0) {
-        x = marginX;
-        y += qrSize + spacingY;
-      } else {
-        x += qrSize + spacingX;
       }
     }
   }
+  
 
   doc.save(`QRCodes_${eventoNome}.pdf`);
 };
