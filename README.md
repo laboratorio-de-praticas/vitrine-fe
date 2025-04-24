@@ -15,7 +15,7 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 
 - Agilizar o desenvolvimento de novas funcionalidades
 
-## Responsividade para Escala 100%
+
 ## Impactos
 - Removidas todas as definições de tipo (*.d.ts, @types)
 
@@ -58,6 +58,29 @@ Implementações:
 - Captura de tela (html2canvas)
 
 - Ícones (react-icons)
+
+## Responsividade para Escala 100%
+
+Se tornou necessária o ajuste para um melhor escalonamento. Garantir que a aplicação mantenha uma experiência consistente e funcional em diferentes dispositivos com escalas de zoom em 100%.
+
+### Testes em Diferentes Níveis de Zoom
+
+Verificação com
+
+100% (padrão e selecionada)
+
+125% e 150% (comum em acessibilidade)
+
+200% (casos extremos para validação)
+
+### Acessibilidade em Textos
+
+Garantir que textos não quebrem layout em zoom alto.
+
+### Impacto Esperado
+Melhoria na experiência de usuários que utilizam zoom por necessidade visual.
+
+Layout mais consistente em diferentes dispositivos e configurações de tela.
 
 ## Configuração e Execução
 ```bash
