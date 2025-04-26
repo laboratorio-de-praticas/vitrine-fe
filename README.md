@@ -120,4 +120,30 @@ vitrine-fe/
 ├── public/          # Assets estáticos
 ├── app/             # Páginas de Redirecionamento com Next.js
 └── styles/          # Estilos globais
+<<<<<<< HEAD
 ```
+=======
+```
+
+
+## Organograma - Vitrine Fatec
+
+![1](/public/diagramvitrine.drawio.png)
+
+
+## Agentes Envolvidos
+
+Agente de Frontend: React/Next.js — interface inicial e verificação do token.
+
+Agente de Backend: NestJS — controla a lógica de autenticação, busca de dados e eventos.
+
+Agente de Banco de Dados: PostgreSQL via TypeORM.
+
+Agente de Segurança (Backend): JWT — checagem e validação do token.
+
+Agente de CMS Backend: CMS que alimenta os dados exibidos na vitrine.
+
+Agente de Frontend TV/Votação:
+- TV: mostra candidatos e QRCode.
+- Votação: exibe dados dos candidatos redirecionados pelo QR.
+>>>>>>> 9680f2a (Readme atualizado com Organograma)
