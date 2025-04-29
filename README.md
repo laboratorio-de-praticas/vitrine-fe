@@ -15,6 +15,7 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 
 - Agilizar o desenvolvimento de novas funcionalidades
 
+
 ## Impactos
 - Removidas todas as definições de tipo (*.d.ts, @types)
 
@@ -30,30 +31,14 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 
 - Principais funcionalidades integradas:
 
-- Listagem de projetos/candidatos
+- Listagem de eventos externos/internos
 
-- Submissão de votos
-
-- Verificação de status de votação
-
-- Resultados parciais (quando disponíveis)
+- Verificação de status de eventos (eventos inativos ficam excluidos)
 
 ### 2. Módulo de Segurança
 Implementações:
 
 - Autenticação JWT para acesso a endpoints protegidos
-
-- Criptografia de votos no client-side antes do envio
-
-- Validação de sessão do eleitor
-
-- Proteção contra CSRF (Cross-Site Request Forgery)
-
-Bibliotecas utilizadas:
-
-- jsencrypt para criptografia assimétrica
-
-- crypto-js para operações de hash
 
 ## Requisitos do Sistema
 ### Dependências principais
@@ -73,6 +58,29 @@ Bibliotecas utilizadas:
 - Captura de tela (html2canvas)
 
 - Ícones (react-icons)
+
+## Responsividade para Escala 100%
+
+Se tornou necessária o ajuste para um melhor escalonamento. Garantir que a aplicação mantenha uma experiência consistente e funcional em diferentes dispositivos com escalas de zoom em 100%.
+
+### Testes em Diferentes Níveis de Zoom
+
+Verificação com
+
+100% (padrão e selecionada)
+
+125% e 150% (comum em acessibilidade)
+
+200% (casos extremos para validação)
+
+### Acessibilidade em Textos
+
+Garantir que textos não quebrem layout em zoom alto.
+
+### Impacto Esperado
+Melhoria na experiência de usuários que utilizam zoom por necessidade visual.
+
+Layout mais consistente em diferentes dispositivos e configurações de tela.
 
 ## Configuração e Execução
 ```bash
@@ -97,8 +105,6 @@ PORT=3001
 
 NEXT_PUBLIC_VITRINE_BE=http://localhost:5001
 
-# Outras variáveis conforme necessário
-
 
 4. Executar o projeto
 
@@ -111,60 +117,33 @@ npm start    # Modo produção (após build)
 ```
 vitrine-fe/
 ├── components/      # Componentes reutilizáveis
-├── pages/           # Rotas da aplicação
-│   ├── api/         # API routes (Next.js)
-│   ├── votacao/     # Páginas relacionadas a votação
-│   └── resultados/  # Visualização de resultados
-├── lib/             # Lógica compartilhada
-│   ├── security.js  # Funções de segurança
-│   └── voting.js    # Lógica de votação
 ├── public/          # Assets estáticos
+├── app/             # Páginas de Redirecionamento com Next.js
 └── styles/          # Estilos globais
+<<<<<<< HEAD
+```
+=======
 ```
 
-## Fluxo de Votação Segura
-- Usuário acessa a plataforma
 
-- Sistema verifica sessão/cookie válido
+## Organograma - Vitrine Fatec
 
-- Dados dos candidatos são carregados com assinatura digital
+![1](/public/diagramvitrine.drawio.png)
 
-- Voto é criptografado no client-side antes do envio
 
-- Backend valida e processa o voto
+## Agentes Envolvidos
 
-- Confirmação é retornada ao frontend
+Agente de Frontend: React/Next.js — interface inicial e verificação do token.
 
-## Considerações de Segurança
-- Todos os votos são criptografados antes da transmissão
+Agente de Backend: NestJS — controla a lógica de autenticação, busca de dados e eventos.
 
-- Uso de HTTPS obrigatório em produção
+Agente de Banco de Dados: PostgreSQL via TypeORM.
 
-- Validação de entrada em todos os campos
+Agente de Segurança (Backend): JWT — checagem e validação do token.
 
-- Logs de auditoria para ações sensíveis
+Agente de CMS Backend: CMS que alimenta os dados exibidos na vitrine.
 
-- Política de CORS restritiva
-
-## Licença
-MIT License
-
-Copyright (c) 2025 Projeto Vitrine
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Agente de Frontend TV/Votação:
+- TV: mostra candidatos e QRCode.
+- Votação: exibe dados dos candidatos redirecionados pelo QR.
+>>>>>>> 9680f2a (Readme atualizado com Organograma)
