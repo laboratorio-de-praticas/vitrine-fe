@@ -25,10 +25,6 @@ export default function Slides() {
   };
 
   useEffect(() => {
-    localStorage.setItem(
-      "token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-    );
     const token = localStorage.getItem("token");
 
     if (!token) {
@@ -134,7 +130,7 @@ export default function Slides() {
         </div>
       )}
 
-      <div className="w-full mt-8 h-4 bg-gray-200 overflow-hidden min-h-4" style={{ margin: "0 auto" }}>
+      <div className="w-full mt-8 h-4 bg-gray-200 overflow-hidden min-h-4" style={{ width: `${Math.min(100, (representantes.length / 4) * 100)}%`, margin: "0 auto" }}>
         <div
           className={`h-full ${curso}-PROGRESS transition-all duration-200 ease-in-out`}
           style={{ width: `${progress}%` }}
