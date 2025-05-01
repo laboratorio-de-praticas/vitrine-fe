@@ -57,7 +57,7 @@ Implementações:
 
 - [![React.js](https://img.shields.io/badge/-ReactJs-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/): 19.0.0+
 
-- [![ReactDOM](https://img.shields.io/badge/-ReactJs-61DAFB?style=flat-square&logo=react&logoColor=white)](https://legacy.reactjs.org/docs/react-dom.html): 19.0.0+
+- [![ReactDOM](https://img.shields.io/badge/-ReactDOM-61DAFB?style=flat-square&logo=react&logoColor=white)](https://legacy.reactjs.org/docs/react-dom.html): 19.0.0+
 
 ## 💾 Dependências adicionais
 - Geração de QR Code (qrcode.react)
