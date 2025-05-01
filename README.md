@@ -51,13 +51,13 @@ Implementações:
 
 ## 💻 Requisitos do Sistema
 ### Dependências principais
-- [![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white)](https://nodejs.org/pt): Versão 14.x.x ou superior (recomendado 16.x.x/18.x.x)
+- [![Node.js](https://img.shields.io/badge/node.js-339933?style=flat-square&logo=Node.js&logoColor=white)](https://nodejs.org/pt): Versão 14.x.x ou superior (recomendado 16.x.x/18.x.x)
 
-- [![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/): 15.2.2+
+- [![Next.js](https://img.shields.io/badge/next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/): 15.2.2+
 
-- [![React.js](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/): 19.0.0+
+- [![React.js](https://img.shields.io/badge/-ReactJs-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/): 19.0.0+
 
-- [![ReactDOM](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://legacy.reactjs.org/docs/react-dom.html): 19.0.0+
+- [![ReactDOM](https://img.shields.io/badge/-ReactJs-61DAFB?style=flat-square&logo=react&logoColor=white)](https://legacy.reactjs.org/docs/react-dom.html): 19.0.0+
 
 ## 💾 Dependências adicionais
 - Geração de QR Code (qrcode.react)
