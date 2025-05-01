@@ -1,9 +1,18 @@
-# Vitrine de Projetos - Frontend
+<p align="center">
+  <a href="https://fatecregistro.cps.sp.gov.br/" target="blank"><img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/40/2024/03/fatec_registro.png" width="300" alt="Fatec Logo" /></a>
+</p>
 
-## Visão Geral
+  <p align="center">Laboratório de Práticas é de realização da <a href="https://fatecregistro.cps.sp.gov.br/" target="_blank">Fatec Registro</a> com o objetivo de acrescentar aos alunos um portfólio, e não menos importante, experiência!</p>
+    <p align="center">
+<a href="https://www.instagram.com/fatecregistro/" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Fatec Registro Instagram" /></a>
+</p>
+
+<h1 align="center">Vitrine - FrontEnd</h1>
+
+## 📋 Visão Geral
 A Vitrine de Projetos é uma interface pública desenvolvida em React/Next.js que permite a visualização e votação em representantes de classes. Este repositório contém o frontend do sistema.
 
-## Mudança de TypeScript para JavaScript
+## 💱 Mudança de TypeScript para JavaScript
 ### Motivação
 O projeto foi migrado de TypeScript para JavaScript puro para:
 
@@ -16,7 +25,7 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 - Agilizar o desenvolvimento de novas funcionalidades
 
 
-## Impactos
+## 💥 Impactos
 - Removidas todas as definições de tipo (*.d.ts, @types)
 
 - Eliminada a necessidade de compilação TypeScript
@@ -25,7 +34,7 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 
 - Mantida a estrutura de componentes e lógica existente
 
-## Integrações Principais
+## ➕ Integrações Principais
 ### 1. Integração com Backend de Votação
 - Endpoint configurável: NEXT_PUBLIC_VITRINE_BE=http://localhost:5001
 
@@ -38,19 +47,19 @@ O projeto foi migrado de TypeScript para JavaScript puro para:
 ### 2. Módulo de Segurança
 Implementações:
 
-- Autenticação JWT para acesso a endpoints protegidos
+- [![Autenticação JWT](https://img.shields.io/badge/JWT-black?style=plastic&logo=JSON%20web%20tokens)](https://jwt.io/): (Para acesso a endpoints protegidos)
 
-## Requisitos do Sistema
+## 💻 Requisitos do Sistema
 ### Dependências principais
-- Node.js: Versão 14.x.x ou superior (recomendado 16.x.x/18.x.x)
+- [![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white)](https://nodejs.org/pt): Versão 14.x.x ou superior (recomendado 16.x.x/18.x.x)
 
-- Next.js: 15.2.2+
+- [![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/): 15.2.2+
 
-- React: 19.0.0+
+- [![React.js](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://react.dev/): 19.0.0+
 
-- ReactDOM: 19.0.0+
+- [![ReactDOM](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://legacy.reactjs.org/docs/react-dom.html): 19.0.0+
 
-## Dependências adicionais
+## 💾 Dependências adicionais
 - Geração de QR Code (qrcode.react)
 
 - Geração de PDF (react-to-pdf, jspdf)
@@ -59,7 +68,7 @@ Implementações:
 
 - Ícones (react-icons)
 
-## Responsividade para Escala 100%
+## 📲 Responsividade para Escala 100%
 
 Se tornou necessária o ajuste para um melhor escalonamento. Garantir que a aplicação mantenha uma experiência consistente e funcional em diferentes dispositivos com escalas de zoom em 100%.
 
@@ -82,7 +91,11 @@ Melhoria na experiência de usuários que utilizam zoom por necessidade visual.
 
 Layout mais consistente em diferentes dispositivos e configurações de tela.
 
-## Configuração e Execução
+## 🏠 Configuração e Execução
+
+> [!IMPORTANT]
+> Previamente a iniciação do projeto, é preciso realizar algumas configurações.
+
 ```bash
 1. Clonar o repositório
 
@@ -113,7 +126,7 @@ npm run dev  # Modo desenvolvimento
 npm start    # Modo produção (após build)
 ```
 
-## Estrutura do Projeto (Principais Diretórios)
+## 📁 Estrutura do Projeto (Principais Diretórios)
 ```
 vitrine-fe/
 ├── components/      # Componentes reutilizáveis
@@ -123,7 +136,9 @@ vitrine-fe/
 ```
 
 
-## Diagramação - Vitrine 
+## 📖 Diagramação - Vitrine 
+>[!NOTE]
+> Organograma Documentado de todas as Requisições e Redirecionamentos da Sessão de Vitrine.
 
 ```mermaid
 flowchart TD
