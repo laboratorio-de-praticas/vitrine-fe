@@ -124,9 +124,14 @@ export default function Slides() {
         ))}
       </div>
 
-      {representantes.length === 0 && (
+      {representantes.length === 0 && !error && (
         <div className="mt-8 text-center text-gray-500 italic text-[1.4rem] leading-[1.3] m-0 3xl:text-[2.9rem]">
           Sem representantes disponíveis para esse evento no momento.
+        </div>
+      )}
+      {error && (
+        <div className="py-6  italic text-red-500 text-center mt-4 font-semibold text-[1.4rem] leading-[1.3] m-0 3xl:text-[2.9rem]">
+          Você não possui as permissões necessárias.
         </div>
       )}
 

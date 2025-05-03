@@ -28,7 +28,8 @@ export default function ListEventos() {
         const token = localStorage.getItem("token");
 
         if (!token) {
-            return router.push("/login");
+            router.push("/login");
+            return
         }
         fetch(`${VITRINE_BE_HOST}/v1/vitrine/eventos-externos`, {
             headers: {
@@ -92,23 +93,25 @@ export default function ListEventos() {
                         ))}
                     </tbody>
                 </table>
-                {eventos.length === 0 && (
+                {eventos.length === 0 && !error && !loading && (
                     <div className="mt-8 text-center text-gray-500 italic text-[1.4rem] leading-[1.3] m-0 pb-4 3xl:text-[2.9rem]">
                         Não há eventos disponíveis no momento.
                     </div>
                 )}
-            </div>
-            {error && (
-                <div className="text-red-500 text-center mt-4 font-semibold">
-                    Ocorreu um erro ao carregar os eventos: {error}
-                </div>
-            )}
-
-            {loading && (
+                {eventos.length === 0 && !error && loading && (
                 <div className="text-center py-6 text-gray-400 italic">
                     Carregando eventos...
                 </div>
-            )}
+                )}
+                {error && (
+                    <div className=" py-6  italic text-red-500 text-center mt-4 font-semibold">
+                        Você não possui as permissões necessárias.
+                    </div>
+                )}
+            </div>
+
+
+
         </div>
 
 
